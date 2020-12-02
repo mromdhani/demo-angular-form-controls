@@ -13,14 +13,16 @@ import {
 })
 export class DemoFormControlsComponent implements OnInit {
   form: FormGroup;
-  items = ["Belgium", "Germany", "Spain"];
+
+  items = ["Belgium", "Germany", "Spain", "Italy", "Netherlands"];
+
   constructor(private _formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
     this.form = this._formBuilder.group({
-      name: ['', [Validators.required, Validators.maxLength(15)]],
-      age: [20, Validators.required],
-      married: [{value:true}],
+      name: ['Avit', [Validators.required, Validators.maxLength(15)]],
+      age: [40, Validators.required],
+      married: [true],
       country: [{ value: '' , disabled: false }],
     });
 
